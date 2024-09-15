@@ -1,1 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inferix'24</title>
+    <style>
+        /* Global styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fefae0;
+        }
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Top bar styling */
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000;
+            padding: 15px;
+            transition: background-color 0.3s ease-in-out; /* Smooth background transition */
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+        .logo span {
+            color: #007BFF; /* Blue color for '24' */
+        }
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.5s ease; /* Smooth transition on hover */
+        }
+        .menu a:hover {
+            color: #007BFF; /* Blue on hover */
+        }
+        /* Register button style */
+        .register-btn {
+            padding: 10px 20px;
+            background-color: white;
+            color: #007BFF; /* Blue text color */
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .register-btn:hover {
+            background-color: #007BFF;
+            color: white;
+        }
+        /* Event section */
+        .event-section {
+            padding: 40px 20px;
+            text-align: center;
+            background-image: url('bg.png'); /* Event section background image */
+            background-size: cover;
+            color: white;
+        }
+        .event-section h2 {
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+        /* Event box styling */
+        .event {
+            background-color: white;
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 15px;
+            max-width: 580px; /* Reduced width by 1 cm (~10px) from original */
+            margin-left: auto;
+            margin-right: auto;
+            color: black;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease, box-shadow 0.5s ease, height 0.5s ease; /* Smooth transition */
+            height: 50px; /* Default height to only show the event name */
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .event:hover {
+            transform: translateY(-10px); /* Smooth animation on hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            height: auto; /* Expand to show full content on hover */
+        }
+        .event-details {
+            margin-bottom: 20px;
+            display: none; /* Hide details by default */
+            transition: opacity 0.5s ease; /* Smooth transition for the event details */
+        }
+        .event:hover .event-details {
+            display: block; /* Show details on hover */
+            opacity: 1; /* Smooth fade-in */
+        }
+        .register-btn-event {
+            display: none; /* Hide register button initially */
+            margin-top: 10px;
+            padding: 8px 18px;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.5s ease, color 0.5s ease, border 0.5s ease; /* Smooth transition */
+        }
+        .event:hover .register-btn-event {
+            display: inline-block; /* Show register button on hover */
+        }
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .menu {
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 10px;
+            }
+            .menu a {
+                font-size: 14px;
+            }
+            .register-btn {
+                margin-top: 10px;
+                align-self: flex-start;
+            }
+            .event-section {
+                padding: 20px 10px;
+            }
+            .event {
+                max-width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
 
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 20px;
+            }
+            .menu a {
+                font-size: 12px;
+            }
+            .register-btn {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+            .event {
+                padding: 10px;
+                margin-bottom: 10px;
+            }
+            .event-details {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top bar -->
+    <div class="top-bar" id="home">
+        <div class="logo">Inferix'<span>24</span></div>
+        <div class="menu">
+            <a href="#home">Home</a>
+            <a href="#events">Event</a>
+            <a href="#faq">FAQs</a>
+            <a href="#contact">Contact Us</a>
+        </div>
+        <a href="#" class="register-btn">Register</a>
+    </div>
+
+    <!-- Main content -->
+    <div class="content">
+        <img src="Inferix.png" alt="Inferix Event" style="width: 100%; height: auto;">
+    </div>
+
+    <!-- Event section -->
+    <div class="event-section" id="events">
+        <div class="container">
+            <h2>Our Events</h2>
+
+            <!-- Technical Events -->
+            <h2>Technical Events</h2>
+
+            <div class="event">
+                <h3>PROJECT - TECH HORIZON</h3>
+                <div class="event-details">
+                    <p><strong>Team Size:</strong> 2 to 4</p>
+                    <p><strong>Individual Participation:</strong> Allowed</p>
+                    <p><strong>Faculty Incharges:</strong></p>
+                    <p><strong>Student Incharges:</strong> Keerthivasan P S (9894218546), Divya</p>
+                    <p><strong>Description:</strong> TECH HORIZON (Project Presentation) offers a platform for innovative thinkers and problem-solvers to showcase their cutting-edge projects that leverage the power of Artificial Intelligence, Data Science, and Machine Learning.</p>
+                    <p><strong>Themes:</strong> AI-Powered Healthcare Diagnostics, NLP-Based Chatbots for Customer Support, Climate Change Prediction Models, Predictive Analytics for Smart Farming, and any innovative project beyond the suggested list.</p>
+                </div>
+                <a href="#" class="register-btn-event">Register</a>
+            </div>
+
+            <div class="event">
+                <h3>PAPER -> SLIDESCAPE</h3>
+                <div class="event-details">
+                    <p><strong>Team Size:</strong> 2 to 4</p>
+                    <p><strong>Individual Participation:</strong> Allowed</p>
+                    <p><strong>Faculty Incharges:</strong></p>
+                    <p><strong>Incharges:</strong> Semmozhichezhian E (9487407075), Ruba Sri (8148424958)</p>
+                    <p><strong>Description:</strong> SLIDESCAPE (Paper Presentation) offers an excellent platform for students to present their original research and insights in the fields of Artificial Intelligence, Data Science, and Machine Learning.</p>
+                    <p><strong>Themes:</strong> AI in Data Privacy and Security, Energy Efficiency through AI, Healthcare ML Innovations, Recommender Systems, and AI in Sustainable Agriculture.</p>
+                </div>
+                <a href="#" class="register-btn-event">Register</a>
+            </div>
+
+            <div class="event">
+                <h3>APTIKEYBOARD -> CODEMATRIX</h3>
+                <div class="event-details">
+                    <p><strong>Team Size:</strong> 2</p>
+                    <p><strong>Individual Participation:</strong> Allowed</p>
+                    <p><strong>Faculty Incharges:</strong></p>
+                    <p><strong>Incharges:</strong> Hari Prasath (9500729532)</p>
+                    <p><strong>Description:</strong> This event is tailored for tech enthusiasts who thrive on technical coding and aptitude challenges under time constraints. Participants will have the opportunity to showcase their coding skills and problem-solving abilities.</p>
+                </div>
+                <a href="#" class="register-btn-event">Register</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
